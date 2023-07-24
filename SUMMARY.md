@@ -23,6 +23,7 @@
   * [双指针](shu-ju-jie-gou-yu-suan-fa/lian-biao/shuang-zhi-zhen.md)
 * [数组](shu-ju-jie-gou-yu-suan-fa/shu-zu/README.md)
   * [双指针](shu-ju-jie-gou-yu-suan-fa/shu-zu/shuang-zhi-zhen.md)
+  * [前缀和数组](shu-ju-jie-gou-yu-suan-fa/shu-zu/qian-zhui-he-shu-zu.md)
 
 ## Basic
 
