@@ -26,6 +26,8 @@
   * [前缀和数组](shu-ju-jie-gou-yu-suan-fa/shu-zu/qian-zhui-he-shu-zu.md)
   * [差分数组](shu-ju-jie-gou-yu-suan-fa/shu-zu/cha-fen-shu-zu.md)
   * [滑动窗口法](shu-ju-jie-gou-yu-suan-fa/shu-zu/hua-dong-chuang-kou-fa.md)
+* [二叉树](shu-ju-jie-gou-yu-suan-fa/er-cha-shu/README.md)
+  * [二叉树算法总纲](shu-ju-jie-gou-yu-suan-fa/er-cha-shu/er-cha-shu-suan-fa-zong-gang.md)
 
 ## Basic
 

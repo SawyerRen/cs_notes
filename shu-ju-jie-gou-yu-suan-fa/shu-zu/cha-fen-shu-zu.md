@@ -19,7 +19,7 @@ for (int i = 1; i < nums.length; i++) {
 }
 ```
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 用这个差分数组可以推导出原数组的值，如下
 
