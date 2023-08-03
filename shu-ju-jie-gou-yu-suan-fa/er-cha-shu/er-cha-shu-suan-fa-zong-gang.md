@@ -80,3 +80,61 @@ void traverse(ListNode head) {
 
 **二叉树题目的递归解法可以分两类思路，第一类是遍历一遍二叉树得出答案，第二类是通过分解问题计算出答案。**
 
+我们先来看一道题目，[leetcode104](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/)二叉树的最大深度，也就是根节点到最远的叶子节点的节点数，这道题可以有两种思路。
+
+可以遍历一遍二叉树，用一个变量记录所在节点的深度，取其中的最大值。
+
+```java
+class Solution {
+    // 最大深度和当前深度
+    int res = 0, depth = 0;
+
+    public int maxDepth(TreeNode root) {
+        helper(root);
+        return res;
+    }
+    
+    // 遍历二叉树
+    private void helper(TreeNode root) {
+        if (root == null) return;
+        depth++;
+        res = Math.max(res, depth);
+        helper(root.left);
+        helper(root.right);
+        depth--;
+    }
+}
+```
+
+注意depth的变化，depth++是在前序位置，表示我们在进入节点的时候，把当前节点的深度+1，而depth--是在后序位置，表示我们在离开节点的时候，把深度-1。
+
+第二种思路则是，二叉树的最大深度可以由它的子树来得到，这就是**分解问题计算答案。**
+
+```java
+class Solution {
+    public int maxDepth(TreeNode root) {
+        if (root == null) return 0;
+        // 计算左右子树的最大深度
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
+        // 取其中的最大深度+1，就是当前的最大深度
+        return Math.max(left, right) + 1;
+    }
+}
+```
+
+通过这个简单的例子，我们可以得到二叉树题目的通用思考过程：
+
+1. 是否可以通过遍历一遍二叉树得到答案？
+2. 是否可以定义一个递归函数，通过子树的答案推导出原问题的答案？
+3. 每个节点需要做什么？要在前中后哪个位置操作？
+
+## 后序位置的特殊之处
+
+前序位置的代码执行是自顶向下的，而后序位置的代码执行是自底向上的。
+
+这也意味着，**前序位置的代码只能从函数参数中获取父节点传递来的数据，而后序位置的代码不仅可以获取参数数据，还可以获取到子树通过函数返回值传递回来的数据**。
+
+当我们遇到题目和子树有关，那么大概率需要设置相应的返回值，并且用后序位置来解决。
+
+比方说[leetcode54](https://leetcode.com/problems/diameter-of-binary-tree/description/)
