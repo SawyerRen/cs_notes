@@ -137,4 +137,28 @@ class Solution {
 
 当我们遇到题目和子树有关，那么大概率需要设置相应的返回值，并且用后序位置来解决。
 
-比方说[leetcode54](https://leetcode.com/problems/diameter-of-binary-tree/description/)
+比方说[leetcode54](https://leetcode.com/problems/diameter-of-binary-tree/description/)3，这题要我们计算二叉树的最长直径长度，这题的关键在于，每一个二叉树的直径长度，就是一个节点的左右子树的最大深度之和。当然我们可以遍历二叉树，算每个子树的直径长度，找到其中的最大值，但是这样的效率很低。这个时候，我们就可以用后序位置来解决。
+
+```java
+class Solution {
+    // 最大直径
+    int res = 0;
+
+    public int diameterOfBinaryTree(TreeNode root) {
+        helper(root);
+        return res;
+    }
+
+    private int helper(TreeNode root) {
+        if (root == null) return 0;
+        int left = helper(root.left);
+        int right = helper(root.right);
+        // 后序位置计算最大直径
+        res = Math.max(res, left + right);
+        // 返回左右子树的最大深度
+        return Math.max(left, right) + 1;
+    }
+}
+```
+
+这样时间复杂度就只有O(n)了。遇到类似的题目，先给函数设置返回值，然后在后续位置操作。
