@@ -161,4 +161,28 @@ class Solution {
 }
 ```
 
-这样时间复杂度就只有O(n)了。遇到类似的题目，先给函数设置返回值，然后在后续位置操作。
+这样时间复杂度就只有O(n)了。遇到类似的题目，先给函数设置返回值，然后在后续位置操作。类似的题目还有[leetcode124](https://leetcode.com/problems/binary-tree-maximum-path-sum/description/)
+
+```java
+class Solution {
+    int res = Integer.MIN_VALUE;
+
+    public int maxPathSum(TreeNode root) {
+        helper(root);
+        return res;
+    }
+
+    private int helper(TreeNode root) {
+        if (root == null) return 0;
+        // 计算左右子树的最大路径和，如果小于0，则使用0值
+        int left = Math.max(0, helper(root.left));
+        int right = Math.max(0, helper(root.right));
+        // 比较得到当前最大值
+        int curMax = root.val + left + right;
+        res = Math.max(res, curMax);
+        // 返回当前节点的值+左右节点路径和的较大值
+        return Math.max(left, right) + root.val;
+    }
+}
+```
+
