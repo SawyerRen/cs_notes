@@ -70,7 +70,7 @@ void traverse(ListNode head) {
 
 而说到二叉树，其实也是一样的，无非就是多了个中序遍历。**前中后序是遍历二叉树过程中处理每一个节点的三个特殊时间点，**前序位置的代码在刚刚进入一个二叉树节点的时候执行；后序位置的代码在将要离开一个二叉树节点的时候执行；中序位置的代码在一个二叉树节点左子树都遍历完，即将开始遍历右子树的时候执行。
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 说了这么多，总结起来就是：
 
@@ -186,3 +186,35 @@ class Solution {
 }
 ```
 
+## 层次遍历
+
+相较于前中后序遍历，层次遍历类似于BFS。
+
+```java
+// 输入一棵二叉树的根节点，层序遍历这棵二叉树
+void levelTraverse(TreeNode root) {
+    if (root == null) return;
+    Queue<TreeNode> q = new LinkedList<>();
+    q.offer(root);
+
+    // 从上到下遍历二叉树的每一层
+    while (!q.isEmpty()) {
+        int sz = q.size();
+        // 从左到右遍历每一层的每个节点
+        for (int i = 0; i < sz; i++) {
+            TreeNode cur = q.poll();
+            // 将下一层节点放入队列
+            if (cur.left != null) {
+                q.offer(cur.left);
+            }
+            if (cur.right != null) {
+                q.offer(cur.right);
+            }
+        }
+    }
+}
+```
+
+这里面 while 循环和 for 循环分管从上到下和从左到右的遍历：
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>

@@ -28,6 +28,7 @@
   * [滑动窗口法](shu-ju-jie-gou-yu-suan-fa/shu-zu/hua-dong-chuang-kou-fa.md)
 * [二叉树](shu-ju-jie-gou-yu-suan-fa/er-cha-shu/README.md)
   * [二叉树算法总纲](shu-ju-jie-gou-yu-suan-fa/er-cha-shu/er-cha-shu-suan-fa-zong-gang.md)
+  * [遍历和递归思维举例](shu-ju-jie-gou-yu-suan-fa/er-cha-shu/bian-li-he-di-gui-si-wei-ju-li.md)
 
 ## Basic
 
