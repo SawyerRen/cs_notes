@@ -121,3 +121,91 @@ class Solution {
 ```
 
 递归是怎么完成展开的工作的？这个其实是很难解释的，但是只要我们让每个节点都去做它该做的事情，然后通过定义递归函数，自然就解决了。
+
+## [通过前序和中序遍历结果构造二叉树](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/) <a href="#tong-guo-qian-xu-he-zhong-xu-bian-li-jie-guo-gou-zao-er-cha-shu" id="tong-guo-qian-xu-he-zhong-xu-bian-li-jie-guo-gou-zao-er-cha-shu"></a>
+
+**这种构造二叉树的题目，需要先确定根节点的值，先创建根节点，然后递归构造左右子树。**
+
+让我们首先考虑一下前序遍历和中序遍历的差异
+
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+找到根节点很容易，前序遍历的第一个值就是根节点，关键在于怎么把前序和中序数组分成两边，构造左右子树。
+
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+
+当我们遍历前序数组的时候，下一个节点可能是当前节点的左子节点、右子节点或者父节点的右子节点，我们通过rootVal分割了中序数组为根节点的左子树和右子树，我们可以通过这个来判断下一个节点和当前节点的关系。
+
+同时，如果我们要寻找rootVal在中序数组中的index，我们可以用HashMap来提高搜索的效率。
+
+代码如下
+
+```java
+class Solution {
+    Map<Integer, Integer> map = new HashMap<>();
+    // 遍历谦虚数组的坐标
+    int preIndex = 0;
+
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        // 构造中序数组的值和坐标的映射
+        for (int i = 0; i < inorder.length; i++) {
+            map.put(inorder[i], i);
+        }
+        return helper(preorder, 0, preorder.length - 1);
+    }
+    
+    // left和right表示在中序数组中的开始和终止索引
+    private TreeNode helper(int[] preorder, int left, int right) {
+        if (left > right) return null;
+        // 拿到rootVal
+        int rootVal = preorder[preIndex++];
+        // 中序数组中rootval的坐标
+        int inorderIndex = map.get(rootVal);
+        // 创建根节点
+        TreeNode root = new TreeNode(rootVal);
+        // 构建左子树，中序数组保留左半部分
+        root.left = helper(preorder, left, inorderIndex - 1);
+        // 构建右子树，中序数组保留右半部分
+        root.right = helper(preorder, inorderIndex + 1, right);
+        return root;
+    }
+}
+```
+
+## [通过后序和中序遍历结果构造二叉树](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/) <a href="#tong-guo-hou-xu-he-zhong-xu-bian-li-jie-guo-gou-zao-er-cha-shu" id="tong-guo-hou-xu-he-zhong-xu-bian-li-jie-guo-gou-zao-er-cha-shu"></a>
+
+这题要我们用后序和中序数组来构造二叉树，和上一题的思路类似。\
+
+
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+需要注意的是，后序遍历的最后一个值是根节点。我们可以从后序数组的最后开始向前遍历，先遍历到的是右子树，后面是左子树，这和前序遍历是相反的。
+
+代码如下
+
+```java
+class Solution {
+    Map<Integer, Integer> map = new HashMap<>();
+    int postIndex = 0;
+
+    public TreeNode buildTree(int[] inorder, int[] postorder) {
+        postIndex = postorder.length - 1;
+        for (int i = 0; i < inorder.length; i++) {
+            map.put(inorder[i], i);
+        }
+        return helper(postorder, 0, postorder.length - 1);
+    }
+
+    private TreeNode helper(int[] postorder, int left, int right) {
+        if (left > right) return null;
+        int rootVal = postorder[postIndex--];
+        int rootIndex = map.get(rootVal);
+        TreeNode root = new TreeNode(rootVal);
+        // 先右后左
+        root.right = helper(postorder, rootIndex + 1, right);
+        root.left = helper(postorder, left, rootIndex - 1);
+        return root;
+    }
+}
+```
+
