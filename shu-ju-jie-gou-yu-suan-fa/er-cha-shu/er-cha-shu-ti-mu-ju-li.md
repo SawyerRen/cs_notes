@@ -1,4 +1,4 @@
-# 遍历和递归思维举例
+# 二叉树题目举例
 
 首先，回顾一下二叉树的解题思维模式：
 
@@ -209,3 +209,58 @@ class Solution {
 }
 ```
 
+## [二叉树的序列化和反序列化](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/)
+
+说是序列化，其实就是遍历二叉树把数据都存到一个一维的结构中。需要思考的是，通过遍历之后序列化的数据，怎么才可以唯一确定一个二叉树的结构？
+
+举例来说，如果我给你这样一个不包含空指针的前序遍历结果 `[1,2,3,4,5]`，那么有很多二叉树都可以满足这个遍历的结果。所以我们还需要给定空指针的信息。
+
+还需要注意的是，只有前序和后序遍历，在包含空指针的信息的情况下，才能还原成唯一的二叉树。这边我们选择用前序遍历来解。在传统的前序遍历中，我们使用List来保存遍历的结果，序列化只要用字符串来保存结果即可。
+
+序列化的解法如下
+
+```java
+// Encodes a tree to a single string.
+public String serialize(TreeNode root) {
+    StringBuilder builder = new StringBuilder();
+    helper(root, builder);
+    return builder.toString();
+}
+
+private void helper(TreeNode root, StringBuilder builder) {
+    // 保留空指针信息
+    if (root == null) {
+        builder.append("null,");
+        return;
+    }
+    // append(",")是为了后面反序列化的时候分割不同的节点的值
+    builder.append(root.val).append(",");
+    helper(root.left, builder);
+    helper(root.right, builder);
+}
+```
+
+现在考虑反序列化函数，我们可以把字符串转化成一个列表，这个列表就是前序遍历的结果。同样的，我们用前序遍历的方式，每次取出列表的第一个值，就是我们前序遍历构造二叉树的下一个节点。
+
+```java
+// Decodes your encoded data to tree.
+public TreeNode deserialize(String data) {
+    // 转化成list
+    Queue<String> queue = new LinkedList<>(Arrays.asList(data.split(",")));
+    return helper1(queue);
+}
+
+private TreeNode helper1(Queue<String> queue) {
+    if (queue.isEmpty()) return null;
+    // 取出第一个值
+    String poll = queue.poll();
+    // 如果是null，说明是空节点
+    if (poll.equals("null")) return null;
+    // 构建根节点
+    TreeNode root = new TreeNode(Integer.parseInt(poll));
+    // 前序遍历后面的节点
+    root.left = helper1(queue);
+    root.right = helper1(queue);
+    return root;
+}
+```

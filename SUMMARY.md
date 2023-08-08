@@ -27,15 +27,16 @@
   * [差分数组](shu-ju-jie-gou-yu-suan-fa/shu-zu/cha-fen-shu-zu.md)
   * [滑动窗口法](shu-ju-jie-gou-yu-suan-fa/shu-zu/hua-dong-chuang-kou-fa.md)
 * [二叉树](shu-ju-jie-gou-yu-suan-fa/er-cha-shu/README.md)
-  * [二叉树算法总纲](shu-ju-jie-gou-yu-suan-fa/er-cha-shu/er-cha-shu-suan-fa-zong-gang.md)
-  * [遍历和递归思维举例](shu-ju-jie-gou-yu-suan-fa/er-cha-shu/bian-li-he-di-gui-si-wei-ju-li.md)
+  * [二叉树算法](shu-ju-jie-gou-yu-suan-fa/er-cha-shu/er-cha-shu-suan-fa.md)
+  * [二叉树题目举例](shu-ju-jie-gou-yu-suan-fa/er-cha-shu/er-cha-shu-ti-mu-ju-li.md)
+  * [二叉搜索树](shu-ju-jie-gou-yu-suan-fa/er-cha-shu/er-cha-sou-suo-shu.md)
 
-## Basic
+## 🍋 Basic
 
 * [Unix](basic/unix/README.md)
   * [Shell](basic/unix/shell.md)
 
-## 系统设计
+## ⚾ 系统设计
 
 * [DDIA Notes](xi-tong-she-ji/ddia-notes/README.md)
   * [第一部分：数据系统基础](xi-tong-she-ji/ddia-notes/di-yi-bu-fen-shu-ju-xi-tong-ji-chu/README.md)
@@ -43,6 +44,6 @@
     * [第二章：数据模型与查询语言](xi-tong-she-ji/ddia-notes/di-yi-bu-fen-shu-ju-xi-tong-ji-chu/di-er-zhang-shu-ju-mo-xing-yu-cha-xun-yu-yan.md)
     * [第三章：存储与检索](xi-tong-she-ji/ddia-notes/di-yi-bu-fen-shu-ju-xi-tong-ji-chu/di-san-zhang-cun-chu-yu-jian-suo.md)
 
-## 一些有用的信息
+## 🥕 一些有用的信息
 
 * [IntelliJ IDEA常用插件](yi-xie-you-yong-de-xin-xi/intellij-idea-chang-yong-cha-jian.md)
