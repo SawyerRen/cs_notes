@@ -37,12 +37,12 @@
   * [环检测和拓扑排序](shu-ju-jie-gou-yu-suan-fa/tu/huan-jian-ce-he-tuo-pu-pai-xu.md)
 * [递归](shu-ju-jie-gou-yu-suan-fa/di-gui.md)
 
-## Basic
+## 🍋 Basic
 
 * [Unix](basic/unix/README.md)
   * [Shell](basic/unix/shell.md)
 
-## 系统设计
+## ⚾ 系统设计
 
 * [DDIA Notes](xi-tong-she-ji/ddia-notes/README.md)
   * [第一部分：数据系统基础](xi-tong-she-ji/ddia-notes/di-yi-bu-fen-shu-ju-xi-tong-ji-chu/README.md)
@@ -50,6 +50,6 @@
     * [第二章：数据模型与查询语言](xi-tong-she-ji/ddia-notes/di-yi-bu-fen-shu-ju-xi-tong-ji-chu/di-er-zhang-shu-ju-mo-xing-yu-cha-xun-yu-yan.md)
     * [第三章：存储与检索](xi-tong-she-ji/ddia-notes/di-yi-bu-fen-shu-ju-xi-tong-ji-chu/di-san-zhang-cun-chu-yu-jian-suo.md)
 
-## 一些有用的信息
+## 🥕 一些有用的信息
 
 * [IntelliJ IDEA常用插件](yi-xie-you-yong-de-xin-xi/intellij-idea-chang-yong-cha-jian.md)

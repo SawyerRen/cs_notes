@@ -13,7 +13,7 @@
 
 最基本的链表技巧，[leetcode21](https://leetcode.com/problems/merge-two-sorted-lists/)问题。
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 有两个有序的链表，我们要把它们合并成一个新的有序的链表。
 
@@ -57,7 +57,7 @@ class Solution {
 
 例如[leetcode86](https://leetcode.com/problems/partition-list/description/)
 
-![](<../../.gitbook/assets/image (2) (1).png>)
+![](<../../.gitbook/assets/image (2).png>)
 
 这里需要把链表一分为二，分成两个小链表，其中一个小链表的元素都大于等于x，另一个的元素都小于x，最后把这两个链表接到一起。
 
@@ -202,7 +202,7 @@ public class Solution {
 
 [leetcode160](https://leetcode.com/problems/intersection-of-two-linked-lists/description/)
 
-![](<../../.gitbook/assets/image (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (1) (1) (1) (1).png>)
 
 所以，我们可以让 `p1` 遍历完链表 `A` 之后开始遍历链表 `B`，让 `p2` 遍历完链表 `B` 之后开始遍历链表 `A`，这样相当于「逻辑上」两条链表接在了一起。
 
