@@ -34,6 +34,7 @@
 * [图](shu-ju-jie-gou-yu-suan-fa/tu/README.md)
   * [遍历算法](shu-ju-jie-gou-yu-suan-fa/tu/bian-li-suan-fa.md)
   * [环检测和拓扑排序](shu-ju-jie-gou-yu-suan-fa/tu/huan-jian-ce-he-tuo-pu-pai-xu.md)
+  * [二分图](shu-ju-jie-gou-yu-suan-fa/tu/er-fen-tu.md)
 * [递归](shu-ju-jie-gou-yu-suan-fa/di-gui.md)
 
 ## 🍋 Basic
