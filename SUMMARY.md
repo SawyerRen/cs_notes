@@ -30,6 +30,9 @@
   * [二叉树算法](shu-ju-jie-gou-yu-suan-fa/er-cha-shu/er-cha-shu-suan-fa.md)
   * [二叉树题目举例](shu-ju-jie-gou-yu-suan-fa/er-cha-shu/er-cha-shu-ti-mu-ju-li.md)
   * [二叉搜索树](shu-ju-jie-gou-yu-suan-fa/er-cha-shu/er-cha-sou-suo-shu.md)
+* [图](shu-ju-jie-gou-yu-suan-fa/tu/README.md)
+  * [遍历算法](shu-ju-jie-gou-yu-suan-fa/tu/bian-li-suan-fa.md)
+  * [环检测和拓扑排序](shu-ju-jie-gou-yu-suan-fa/tu/huan-jian-ce-he-tuo-pu-pai-xu.md)
 
 ## 🍋 Basic
 

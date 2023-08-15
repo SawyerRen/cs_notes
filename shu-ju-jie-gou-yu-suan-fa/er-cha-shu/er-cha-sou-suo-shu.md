@@ -108,3 +108,22 @@ class Solution {
     }
 }
 ```
+
+## 在 BST 中搜索元素 <a href="#zai-bst-zhong-sou-suo-yuan-su" id="zai-bst-zhong-sou-suo-yuan-su"></a>
+
+[leetcode700](https://leetcode.com/problems/search-in-a-binary-search-tree/description/)
+
+这题非常简单了，利用BST左小右大的特性，其实也就相当于二分查找。
+
+```java
+class Solution {
+    public TreeNode searchBST(TreeNode root, int val) {
+        while (root != null) {
+            if (root.val == val) return root;
+            if (root.val < val) root = root.right;
+            else root = root.left;
+        }
+        return null;
+    }
+}
+```
