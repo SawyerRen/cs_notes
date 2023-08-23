@@ -37,6 +37,8 @@
   * [二分图](shu-ju-jie-gou-yu-suan-fa/tu/er-fen-tu.md)
   * [并查集 Union-Find](shu-ju-jie-gou-yu-suan-fa/tu/bing-cha-ji-unionfind.md)
   * [Dijkstra 算法](shu-ju-jie-gou-yu-suan-fa/tu/dijkstra-suan-fa.md)
+* [栈和队列](shu-ju-jie-gou-yu-suan-fa/zhan-he-dui-lie.md)
+* [动态规划](shu-ju-jie-gou-yu-suan-fa/dong-tai-gui-hua.md)
 * [递归](shu-ju-jie-gou-yu-suan-fa/di-gui.md)
 
 ## 🍋 Basic
