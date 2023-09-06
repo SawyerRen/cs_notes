@@ -6,7 +6,7 @@
 
 ## 拓扑排序
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 拓扑排序如图所示，简单地说，就是把一个图拉平，在这个拉平的图中，所有箭头的方向都是一致的。如果一个图中存在环，那么这个图是肯定不能进行拓扑排序的，因为不能保证所有箭头的方向都是一致的。
 

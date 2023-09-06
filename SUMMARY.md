@@ -45,6 +45,7 @@
 
 * [Unix](basic/unix/README.md)
   * [Shell](basic/unix/shell.md)
+  * [文件系统](basic/unix/wen-jian-xi-tong.md)
 
 ## ⚾ 系统设计
 
