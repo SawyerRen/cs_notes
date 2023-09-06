@@ -84,15 +84,24 @@ shell允许多个命令的组合，一般有以下几种机制：
 
 #### 顺序组合
 
-
+命令都按照顺序执行
 
 ```
 $ sleep 10; echo "Done"
 ```
 
-Execute one command and send its `STDOUT` to the next command’s `STDIN`. Commands are separated by pipe or `|`. These are often called _piped commands_. **Most-often used form of complex command**
+#### 平行组合
 
-* **Sequential Composition**: Execute one after the other (instead of typing, running, waiting, loop)
-* **Parallel Composition**: Execute at the same time
-* **Conjunctive Composition**: Execute one after the other **provided that** previous command does **not** exit with a nonzero (i.e. error) status
-* **Disjunctive Composition**: Execute one after the other **provided that** the previous command exits with a nonzero (i.e. error) status
+所有的命令同时执行，除了最后一个，别的命令都在后 台执行。
+
+```
+$ gvim text1 & gvim text2 & vim text3
+```
+
+###
+
+The next command only runs if the previous command is successful.
+
+```
+$ mkdir NEW_DIR && cd NEW_DIR
+```
