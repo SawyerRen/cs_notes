@@ -92,16 +92,24 @@ $ sleep 10; echo "Done"
 
 #### 平行组合
 
-所有的命令同时执行，除了最后一个，别的命令都在后 台执行。
+所有的命令同时执行，除了最后一个，别的命令都在后台执行。
 
 ```
 $ gvim text1 & gvim text2 & vim text3
 ```
 
-###
+#### 并行组合
 
-The next command only runs if the previous command is successful.
+只有前一个命令执行成功，才会执行下一个命令
 
 ```
 $ mkdir NEW_DIR && cd NEW_DIR
+```
+
+#### 异或组合
+
+只有前一个命令执行不成功，才会执行下一个命令
+
+```
+$ ./myprog aFile || vi myprog # myprog works...or else we go back to editing it ;)
 ```
